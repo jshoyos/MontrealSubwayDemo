@@ -2,29 +2,54 @@ package tutorial_03_soen343;
 
 import java.util.*;
 
+/**
+ * The type Subway. This class is the subway model and contains the logic for the subway
+ */
 public class Subway
 {
     private List stations;
     private List connections;
     private Map network;
-    
+    private static double routeCost = 0;
+
+    /**
+     * Instantiates a new Subway.
+     */
     public Subway() {
         this.stations = new LinkedList();
         this.connections = new LinkedList();
         this.network = new HashMap();
     }
-    
+
+    /**
+     * Add station to the subway.
+     *
+     * @param stationName the station name
+     */
     public void addStation(String stationName) {
         if (!this.hasStation(stationName)) {
             Station station = new Station(stationName);
             stations.add(station);
         }
     }
-    
+
+    /**
+     * Has station boolean.
+     *
+     * @param stationName the station name
+     * @return the boolean
+     */
     public boolean hasStation(String stationName) {
         return stations.contains(new Station(stationName));
     }
-    
+
+    /**
+     * Add connection between stations.
+     *
+     * @param station1Name the station 1 name
+     * @param station2Name the station 2 name
+     * @param lineName     the line name
+     */
     public void addConnection(String station1Name, String station2Name, String lineName) {
     	if ((this.hasStation(station1Name)) && (this.hasStation(station2Name))) {
             Station station1 = new Station(station1Name);
@@ -54,8 +79,16 @@ public class Subway
             network.put(station1, connectingStations);
         }
     }
-    
+
+    /**
+     * Gets directions.
+     *
+     * @param startStationName the start station name
+     * @param endStationName   the end station name
+     * @return the directions
+     */
     public List getDirections(String startStationName, String endStationName) {
+        routeCost = 0;
         if (!this.hasStation(startStationName) || !this.hasStation(endStationName))
         {
             throw new RuntimeException("Stations entered do not exist on this subway");
@@ -120,7 +153,7 @@ public class Subway
             }
             keyStation = station;
         }
-        
+        calculateRouteCost(previousStations,start,end);
         return route;
     }
     
@@ -135,8 +168,16 @@ public class Subway
         }
         return null;
     }
-        
-    
+
+
+    /**
+     * Has connection boolean.
+     *
+     * @param station1Name the station 1 name
+     * @param station2Name the station 2 name
+     * @param lineName     the line name
+     * @return the boolean
+     */
     public boolean hasConnection(String station1Name, String station2Name, String lineName) {
         Station station1 = new Station(station1Name);
         Station station2 = new Station(station2Name);
@@ -151,6 +192,40 @@ public class Subway
             }
         }
         return false;
+    }
+
+    /**
+     * Calculates the price of the route
+     * @param stations
+     * @param start
+     * @param end
+     */
+    private void calculateRouteCost(Map stations,Station start, Station end){
+        boolean keepLooping = true;
+        boolean includeLast = true;
+        Station station = end;
+        while(keepLooping){
+            routeCost += station.getStationCost();
+            if(includeLast){
+                includeLast=false;
+            }
+            else {
+                station = (Station) stations.get(end);
+            }
+            if (start.equals(station)) {
+                keepLooping = false;
+            }
+            end = station;
+        }
+    }
+
+    /**
+     * Get route cost double.
+     *
+     * @return the double
+     */
+    public static double getRouteCost(){
+        return routeCost;
     }
                 
 }

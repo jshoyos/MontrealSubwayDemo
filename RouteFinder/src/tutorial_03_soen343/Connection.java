@@ -1,5 +1,7 @@
 package tutorial_03_soen343;
 
+import java.util.Objects;
+
 public class Connection
 {
     private Station station1, station2;
@@ -31,5 +33,14 @@ public class Connection
     {
         return "[" + station1.getName() + ", " + station2.getName() + ", " + lineName + "]";
     }
-    
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Connection other = (Connection) o;
+        return station1.equals(other.station1) &&
+                station2.equals(other.station2) &&
+                lineName.equalsIgnoreCase(other.lineName);
+    }
 }
