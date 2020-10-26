@@ -204,16 +204,11 @@ public class Subway
         boolean includeLast = true;
         Station station = end;
         while(keepLooping){
-            routeCost += station.getStationCost();
-            if(includeLast){
-                includeLast=false;
-            }
-            else {
-                station = (Station) stations.get(end);
-            }
+            station = (Station) stations.get(end);
             if (start.equals(station)) {
                 keepLooping = false;
             }
+            routeCost += station.getStationCost();
             end = station;
         }
     }
