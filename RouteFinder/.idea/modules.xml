@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RouteFinder.iml" filepath="$PROJECT_DIR$/RouteFinder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Subway/Subway.iml" filepath="$PROJECT_DIR$/Subway/Subway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SubwayLoader/SubwayLoader.iml" filepath="$PROJECT_DIR$/SubwayLoader/SubwayLoader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SubwayPrinter/SubwayPrinter.iml" filepath="$PROJECT_DIR$/SubwayPrinter/SubwayPrinter.iml" />
     </modules>
   </component>
 </project>

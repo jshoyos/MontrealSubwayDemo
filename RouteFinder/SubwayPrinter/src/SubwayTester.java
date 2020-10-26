@@ -1,10 +1,16 @@
-package tutorial_03_soen343;
-
 import java.io.*;
 import java.util.*;
 
+/**
+ * The type Subway tester.
+ */
 public class SubwayTester
 {
+    /**
+     * Driver For the subway.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         if (args.length != 2) {
             System.err.println("Usage: SubwayTester \"StartStation\" \"endStation\" ");

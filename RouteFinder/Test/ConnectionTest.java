@@ -1,6 +1,5 @@
 import org.junit.Test;
-import tutorial_03_soen343.Connection;
-import tutorial_03_soen343.Station;
+
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,1 +1,1 @@
-moduleSearchIndex = [{"l":"RouteFinder"}];updateSearchResults();
+moduleSearchIndex = [];updateSearchResults();

@@ -1,5 +1,3 @@
-package tutorial_03_soen343;
-
 import java.util.*;
 
 /**
@@ -66,7 +64,8 @@ public class Subway
             throw new RuntimeException("Invalid connection: [" + station1Name + ", " + station2Name + ", " + lineName + "]");
         }
     }
-    
+
+    //Private method only use to add the station to the map
     private void addToNetwork(Station station1, Station station2) {
         if (network.keySet().contains(station1)) {
             List connectingStations = (List) network.get(station1);

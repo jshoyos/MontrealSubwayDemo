@@ -1,5 +1,3 @@
-package tutorial_03_soen343;
-
 import java.io.File;
 import java.io.*;
 
@@ -33,12 +31,14 @@ public class SubwayLoader
         }
         return subway;
     }
-    
+
+    //This method is used to load the stations and is called before a connection id added
     private void loadStations(Subway subway, String stationName1,String stationName2){
         subway.addStation(stationName1);
         subway.addStation(stationName2);
     }
-    
+
+    //This Method is used to load the lines of the subway. i.e green Line and its stations , blue line and its stations ....
     private void loadLine(Subway subway, BufferedReader reader, String lineName) throws IOException {
         String station1Name, station2Name;
         station1Name = reader.readLine();

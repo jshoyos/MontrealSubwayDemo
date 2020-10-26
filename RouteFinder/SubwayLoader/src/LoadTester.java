@@ -1,9 +1,15 @@
-package tutorial_03_soen343;
-
 import java.io.File;
 
+/**
+ * The type Load tester.
+ */
 public class LoadTester
 {
+    /**
+     * The driver for the Subway load tester.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         try {
             SubwayLoader loader = new SubwayLoader();
@@ -26,7 +32,7 @@ public class LoadTester
             if (city.hasConnection("Atwater", "Guy Concordia", "Green Line") &&
                 city.hasConnection("Cote Vertu", "Du College", "Orange Line") &&
                 city.hasConnection("Snowdon", "Cote des Neiges", "Blue Line")) {
-                System.out.println("...connections test passed succesfully.");
+                System.out.println("...connections test passed successfully.");
             }
             else
             {

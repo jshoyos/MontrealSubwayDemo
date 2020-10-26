@@ -1,8 +1,4 @@
 import org.junit.Test;
-import tutorial_03_soen343.Connection;
-import tutorial_03_soen343.Station;
-import tutorial_03_soen343.Subway;
-import tutorial_03_soen343.SubwayLoader;
 
 import java.io.File;
 import java.io.IOException;

@@ -10,5 +10,7 @@
     <orderEntry type="jdk" jdkName="JavaSE-14" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="junit:junit:4.13" level="project" />
+    <orderEntry type="module" module-name="Subway" scope="TEST" />
+    <orderEntry type="module" module-name="SubwayLoader" scope="TEST" />
   </component>
 </module>

@@ -1,5 +1,3 @@
-package tutorial_03_soen343;
-
 /**
  * The type Station.
  */
